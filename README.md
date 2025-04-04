@@ -1,5 +1,8 @@
 # How to run this example
 
+Run with :
+`docker compose -f .devcontainer/docker-compose.yml up --build -d`
+
 Follow the [Installation steps](#installation) below and start the devcontainer
 You will immediately notice an error about a missing file `api/__generated__/definition.js`. This is normal because we'll need to deploy the models.
 
@@ -36,13 +39,37 @@ The [Devkit](https://github.com/AKASHAorg/extension-devkit) (available on Github
 
 ## Features
 
+### Core Development Features
 - [Typescript](https://www.typescriptlang.org/)
-- [Vite](https://vite.dev/)
-- [Shadcn](https://ui.shadcn.com/)
-- [AKASHA React Hooks](https://github.com/AKASHAorg/akasha-core/tree/next/libs/hooks)
-- [AKASHA React Apollo Hooks](https://github.com/AKASHAorg/akasha-core/blob/next/libs/hooks/README_GENERATED.md)
+- [React](https://react.dev/) with modern hooks and components
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Vite](https://vite.dev/) for fast development server
 - [AKASHA SDK](https://github.com/AKASHAorg/akasha-core/tree/next/libs/sdk)
-- Live Reload - reloads the extension, on file change
+- Live Reload - reloads the extension on file change
+
+### Market Data Integration (Akavibe)
+- Integration with Token Metrics API for real-time cryptocurrency market data
+- Fetches sentiment analysis from multiple sources (News, Reddit, Twitter)
+- Real-time market sentiment grades and labels
+
+### Social Media Post Generation (Akavibe)
+- AI-powered social media post generation using Groq API
+- Automatically generates engaging posts with proper formatting
+- Includes market sentiment analysis and key highlights
+- Uses markdown formatting for better readability
+
+### UI Features (Akavibe)
+- Modern, responsive design with Tailwind CSS
+- Proper markdown rendering without external libraries
+- Centered titles with appropriate spacing
+- Emojis and icons for better visual appeal
+- Clean and organized layout for market data
+
+### Development Environment (Akavibe)
+- Docker-based development environment
+- Hot reloading for faster development
+- Type-safe code with TypeScript
+- Comprehensive error handling
 
 ## Installation
 
@@ -107,5 +134,3 @@ Now that we have set up and run the project (locally or on DevContainer), please
 
 4. I want to run the project again on DevContainers after making a few changes or running it locally, how do I proceed?
    - First, make sure you have stopped the script on the local terminal, then proceed to search and select the appropriate command from the command palette to `Rebuild and Reopen in DevContainers`
-
-
