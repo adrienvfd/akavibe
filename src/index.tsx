@@ -1,6 +1,6 @@
 import {
-  IAppConfig,
-  IntegrationRegistrationOptions,
+  type IAppConfig,
+  type IntegrationRegistrationOptions,
   MenuItemAreaType,
   LogoTypeSource,
   MenuItemType,
@@ -16,7 +16,8 @@ import { POLL_EDITOR } from './components/app-routes';
  */
 
 const SidebarIcon = () => (
-  <svg
+  // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
+<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -36,6 +37,7 @@ export const initialize = () => {
   const sdk = getSDK();
   const compose = getComposeClient();
   const resources = compose.resources;
+  // biome-ignore lint/complexity/noForEach: <explanation>
   resources.forEach(res => sdk.services.ceramic.setExtraResource(res));
 };
 
@@ -61,7 +63,7 @@ export const register = (opts: IntegrationRegistrationOptions): IAppConfig => {
           type: MenuItemType.Internal,
         },
         {
-          label: 'VIBE',
+          label: 'Akavibe',
           index: 1,
           route: '/vibe',
           type: MenuItemType.Internal,
