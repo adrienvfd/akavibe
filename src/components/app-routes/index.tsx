@@ -58,7 +58,22 @@ const pollEditorRoute = createRoute({
   },
 });
 
-const routeTree = rootRoute.addChildren([defaultRoute, pollsRoute, pollEditorRoute]);
+const akaVibeRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/vibe',
+  component: () => {
+    return (
+      <CatchBoundary
+        getResetKey={() => 'polls_form_reset'}
+        errorComponent={() => <div>Not found</div>}
+      >
+        <div> Hello Akasha </div>
+      </CatchBoundary>
+    );
+  },
+});
+
+const routeTree = rootRoute.addChildren([defaultRoute, pollsRoute, pollEditorRoute, akaVibeRoute]);
 
 const router = ({ baseRouteName, apolloClient }: ICreateRouter) =>
   createRouter({

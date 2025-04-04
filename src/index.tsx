@@ -60,6 +60,12 @@ export const register = (opts: IntegrationRegistrationOptions): IAppConfig => {
           route: routes[POLL_EDITOR],
           type: MenuItemType.Internal,
         },
+        {
+          label: 'VIBE',
+          index: 1,
+          route: '/vibe',
+          type: MenuItemType.Internal,
+        },
       ],
     },
 
