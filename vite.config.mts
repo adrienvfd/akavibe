@@ -59,6 +59,12 @@ export default defineConfig(({ mode }) => {
         preserveEntrySignatures: 'strict',
         external: ['@akashaorg/core-sdk', '@akashaorg/ui-core-hooks', 'react', 'react-dom'],
         jsx: 'react-jsx',
+        plugins: [
+          externalGlobals({
+            react: 'React',
+            'react-dom': 'ReactDOM',
+          }),
+        ],
         output: {
           dir: 'dist',
           format: 'systemjs',
@@ -70,7 +76,7 @@ export default defineConfig(({ mode }) => {
             return `${chunkInfo.name}.js`;
           },
           inlineDynamicImports: false,
-          experimentalMinChunkSize: Number.POSITIVE_INFINITY,
+          experimentalMinChunkSize: Infinity,
           systemNullSetters: true,
           manualChunks: id => {
             if (id.includes('src') && !id.includes('/node_modules/')) {
